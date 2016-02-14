@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    printf("Hello reversing!");
+    printf("Hello reversing!\n");
     return 0;
 }

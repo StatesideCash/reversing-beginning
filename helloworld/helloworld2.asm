@@ -32,8 +32,8 @@ main:
 	call	printf
 	mov	eax, 0
 	mov	rcx, QWORD PTR [rbp-8]
-	xor	rcx, QWORD PTR fs:40
-	je	.L3
+	xor	rcx, QWORD PTR fs:40 # Compare the stack canary with the original value
+	je	.L3 # If the canary doesn't match, call __stack_chk_fail and abort program
 	call	__stack_chk_fail
 .L3:
 	leave

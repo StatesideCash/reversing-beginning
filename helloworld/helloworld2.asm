@@ -15,8 +15,8 @@ main:
 	mov	rbp, rsp
 	.cfi_def_cfa_register 6
 	sub	rsp, 48
-	mov	rax, QWORD PTR fs:40
-	mov	QWORD PTR [rbp-8], rax
+	mov	rax, QWORD PTR fs:40 # Gets a stack canary
+	mov	QWORD PTR [rbp-8], rax # Stores the canary on the stack
 	xor	eax, eax
 	mov	DWORD PTR [rbp-48], 1819043144 # ASCII: lleH
 	mov	WORD PTR [rbp-44], 111 # ASCII: o

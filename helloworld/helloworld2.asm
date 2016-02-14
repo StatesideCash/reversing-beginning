@@ -18,16 +18,16 @@ main:
 	mov	rax, QWORD PTR fs:40
 	mov	QWORD PTR [rbp-8], rax
 	xor	eax, eax
-	mov	DWORD PTR [rbp-48], 1819043144
-	mov	WORD PTR [rbp-44], 111
-	movabs	rax, 7956017151892415858
+	mov	DWORD PTR [rbp-48], 1819043144 # ASCII: lleH
+	mov	WORD PTR [rbp-44], 111 # ASCII: o
+	movabs	rax, 7956017151892415858 # ASCII: nisrever
 	mov	QWORD PTR [rbp-32], rax
-	mov	WORD PTR [rbp-24], 8551
-	mov	BYTE PTR [rbp-22], 0
-	lea	rdx, [rbp-32]
-	lea	rax, [rbp-48]
-	mov	rsi, rax
-	mov	edi, OFFSET FLAT:.LC0
+	mov	WORD PTR [rbp-24], 8551 # ASCII: !g
+	mov	BYTE PTR [rbp-22], 0 # NULL byte
+	lea	rdx, [rbp-32] # rdx = pointer to string "reversing!"
+	lea	rax, [rbp-48] # rax = pointer to string "Hello"
+	mov	rsi, rax      # rsi = pointer to string "Hello"
+	mov	edi, OFFSET FLAT:.LC0 # edi = pointer to string "%s %s\n"
 	mov	eax, 0
 	call	printf
 	mov	eax, 0

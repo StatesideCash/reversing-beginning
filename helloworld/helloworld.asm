@@ -15,8 +15,7 @@ main:
 	mov	rbp, rsp
 	.cfi_def_cfa_register 6
 	mov	edi, OFFSET FLAT:.LC0
-	mov	eax, 0
-	call	printf
+	call	puts
 	mov	eax, 0
 	pop	rbp
 	.cfi_def_cfa 7, 8
